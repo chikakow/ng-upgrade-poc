@@ -1,0 +1,14 @@
+
+<div class="ng-plus">
+** Angular AppComponent - using AngularJs Component below.
+<br>
+Counter: {{counter}}
+<br>
+twoWay: {{twoWay}}
+<br>
+<angularjs-component [counter]="counter" (multiply)="multiplyCounter($event)"
+[(twoWay)]="twoWay"
+></angularjs-component>
+
+<router-outlet></router-outlet> 
+</div>
