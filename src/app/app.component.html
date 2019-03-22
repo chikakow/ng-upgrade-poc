@@ -15,5 +15,13 @@ twoWay: <input [(ngModel)]="twoWay">
 I am transcluded from parent Angular component
 </angularjs-component>
 <angular-component></angular-component>
+<br>
+<pre>To build for production:
+change those flags in angular.json to:
+aot: false,
+buildOptimizer: false
+Then just do 
+ng build --prod
+</pre>
 <router-outlet></router-outlet> 
 </div>

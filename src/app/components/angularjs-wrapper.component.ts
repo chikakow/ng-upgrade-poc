@@ -14,7 +14,7 @@ export class AngularJSWrapperComponent extends UpgradeComponent implements OnCha
 
   // We need to declare these two properties.
   // [(twoWay)]="counter" is the same as [twoWay]="counter" (twoWayChange)="counter=$event"
-  @Input() twoWay;
+  @Input() twoWay: any;
   @Output() twoWayChange: EventEmitter<string>;
 
   constructor(ref: ElementRef, inj: Injector) {

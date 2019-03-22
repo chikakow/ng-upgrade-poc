@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "types": ["node"],
     "sourceMap": true,
     "declaration": false,
     "module": "es2015",
@@ -11,6 +12,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
+    "noImplicitAny": false,
     "typeRoots": [
       "node_modules/@types"
     ],

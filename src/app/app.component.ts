@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-
+//  moduleId: module.id,
 @Component({
+ 
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'upgrade-poc';
   counter = 1;
-  twoWay;
+  twoWay: any;
 
   multiplyCounter(event: number) {
     this.counter = this.counter * event;
