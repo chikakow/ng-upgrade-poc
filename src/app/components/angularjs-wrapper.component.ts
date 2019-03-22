@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Injector, Input, Output, EventEmitter } from '@angular/core';
+import { Directive, ElementRef, Injector, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 import { UpgradeComponent } from '@angular/upgrade/static';
 
 // An AngularJS component upgraded to Angular.
@@ -8,16 +8,21 @@ import { UpgradeComponent } from '@angular/upgrade/static';
   selector: 'angularjs-component'
 })
 // tslint:disable-next-line:directive-class-suffix
-export class AngularJSWrapperComponent extends UpgradeComponent {
+export class AngularJSWrapperComponent extends UpgradeComponent implements OnChanges {
   @Input() counter: number;
   @Output() multiply: EventEmitter<number>;
 
   // We need to declare these two properties.
   // [(twoWay)]="counter" is the same as [twoWay]="counter" (twoWayChange)="counter=$event"
-  @Input() twoWay: number;
-  @Output() twoWayChange: EventEmitter<number>;
+  @Input() twoWay;
+  @Output() twoWayChange: EventEmitter<string>;
 
   constructor(ref: ElementRef, inj: Injector) {
     super('angularjsComponent', ref, inj);
   }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(changes);
+  }
+
 }

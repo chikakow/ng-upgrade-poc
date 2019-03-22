@@ -4,11 +4,16 @@
 <br>
 Counter: {{counter}}
 <br>
-twoWay: {{twoWay}}
+two way binding going from parant to child is not working but reverse is working...
+<br>
+twoWay: <input [(ngModel)]="twoWay">
 <br>
 <angularjs-component [counter]="counter" (multiply)="multiplyCounter($event)"
 [(twoWay)]="twoWay"
-></angularjs-component>
-
+>
+<br>
+I am transcluded from parent Angular component
+</angularjs-component>
+<angular-component></angular-component>
 <router-outlet></router-outlet> 
 </div>

@@ -4,5 +4,10 @@
 
 .ng1 {
   background-color: aqua;
-  margin: 10px;
+  margin: 30px;
+}
+
+.transclude {
+  background-color: lightpink;
+  padding: 15px;
 }

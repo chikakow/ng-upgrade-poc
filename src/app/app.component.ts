@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'upgrade-poc';
   counter = 1;
-  twoWay = 'chikako';
-  
+  twoWay;
+
   multiplyCounter(event: number) {
     this.counter = this.counter * event;
   }

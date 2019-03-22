@@ -34,6 +34,7 @@
             "scripts": [
               "node_modules/angular/angular.min.js",
               "src/app/angularjs/angularjs.module.js", 
+              "src/app/angularjs/services/notify.service.js",
               "src/app/angularjs/directives/angularjs.component.js"],
             "es5BrowserSupport": true
           },

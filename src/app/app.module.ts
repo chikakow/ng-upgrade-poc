@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { FormsModule } from '@angular/forms';
 // “@angular/upgrade/static” captures window.angular
 // so below import needs to come after angular js is imported which in this case is
 
 // attached already in angular.json
 import {downgradeComponent, UpgradeComponent, UpgradeModule, setAngularJSGlobal } from '@angular/upgrade/static';
 import { AngularJSWrapperComponent } from './components/angularjs-wrapper.component';
+import { notifyServiceProvider } from './ajs-upgraded-providers';
+import { AngularComponent } from './components/angular.component';
 
 declare const angular: any;
 
@@ -19,12 +21,17 @@ angular.module('AngularJsModule').directive('appRoot', downgradeComponent({compo
 @NgModule({
   declarations: [
     AppComponent,
-    AngularJSWrapperComponent
+    AngularJSWrapperComponent,
+    AngularComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     UpgradeModule
+  ],
+  providers: [
+    notifyServiceProvider
   ],
   entryComponents: [AppComponent]
 })
