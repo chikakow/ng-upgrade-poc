@@ -3,10 +3,10 @@
 
   
 //   var htmlC = require(['text!angularjs.component.html'], function(t) {
-//     console.log('html is', t);
+//     console.log('html is', t, angular);
 
 //     angular.module('AngularJsModule').component('angularjsComponent', {
-//       template: t,
+//       template: 'hi',
 //       bindings: {
 //         counter: `<`,
 //         multiply: '&',
@@ -27,18 +27,19 @@
 
 
 angular.module('AngularJsModule').component('angularjsComponent', {
-  template: `<div ng-include="./angularjs.component.html"></div>`,
+  templateUrl:  'assets-angularjs.component.html',
   bindings: {
     counter: `<`,
     multiply: '&',
     twoWay: '='
   },
-  controller: [ componentController]
+  controller: ['$templateCache', componentController]
 }
 );
 
-function componentController() {
+function componentController(cache) {
   this.notifyMessage = function(msg) {
+    //console.log('cache =', cache.get('assets/angularjs.component.html'));
   //  notifyService.notify(msg);
   };
 }
