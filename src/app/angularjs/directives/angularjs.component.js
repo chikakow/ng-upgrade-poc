@@ -13,7 +13,8 @@
       </div>
       <br>
       counter: {{$ctrl.counter}}
-      <button ng-click="$ctrl.multiply(2)">Double</button>
+      <input ng-model="$ctrl.times" type="number" min="2" max="10">
+      <button ng-click="$ctrl.multiply($ctrl.times)">Multiply({{$ctrl.times}})</button>
       <br>
       Bound via a two-way binding: <input ng-model="$ctrl.twoWay">
       <br>
@@ -30,9 +31,13 @@
   );
 
   function componentController(notifyService) {
+    this.times = 2;
+
     this.notifyMessage = function(msg) {
       notifyService.notify(msg);
     };
+
+  
   }
 
 })();

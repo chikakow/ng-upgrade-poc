@@ -13,6 +13,7 @@ export class AppComponent {
 
   multiplyCounter(event: number) {
     this.counter = this.counter * event;
+    console.log('output "multiply" from AngularJs is triggered Angular multiplyCounter() method with event:' + event);
   }
 }
 
